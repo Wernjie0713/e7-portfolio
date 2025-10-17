@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { awards, researchGrants } from '@/data/awards'
-import { DollarSign, TrendingUp, Sparkles, Trophy  } from 'lucide-react'
+import { TrendingUp, Trophy, DollarSign, HandCoins  } from 'lucide-react'
 import { LiquidButton } from '@/components/animate-ui/components/buttons/liquid'
 
 export default function AwardsSection() {
@@ -163,9 +163,9 @@ export default function AwardsSection() {
                 )}
               </div>
 
-              {/* Research Grants List */}
+              {/* Funding List */}
               <div>
-                <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Research Grants</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Funding</h3>
                 <div className="divide-y divide-gray-200 dark:divide-gray-800 rounded-lg bg-white/30 dark:bg-gray-900/30 overflow-hidden">
                   {sortedGrants.map((grant, index) => {
                     const isExpanded = expandedId === `grant-${grant.id}`
@@ -210,26 +210,15 @@ export default function AwardsSection() {
                               className="overflow-hidden"
                             >
                               <div className="p-6 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900/80 dark:to-gray-900/50">
-                                {/* Header Section */}
-                                <div className="flex items-start gap-4 mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
-                                  <div className="p-4 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 text-white shadow-lg">
-                                    <DollarSign className="w-8 h-8" />
-                                  </div>
-                                  <div className="flex-1">
-                                    <div className="flex items-center gap-3 mb-3">
-                                      <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 dark:bg-green-500/20 text-green-700 dark:text-green-400">
-                                        {grant.status}
-                                      </span>
-                                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                                        {grant.year}
-                                      </span>
-                                    </div>
-                                    <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-neon-pink-50 to-purple-50 dark:from-neon-pink-500/10 dark:to-purple-500/10 border-2 border-neon-pink-200 dark:border-neon-pink-500/20">
-                                      <span className="text-3xl font-bold text-neon-pink-600 dark:text-neon-pink-400">
-                                        {grant.amount}
-                                      </span>
-                                      <span className="text-xs text-neon-pink-600 dark:text-neon-pink-400 font-semibold">Funding</span>
-                                    </div>
+                                {/* Badges */}
+                                <div className="flex flex-wrap items-center gap-3 mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
+                                  <span className="px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-500/20 dark:to-emerald-500/20 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-500/30">
+                                    {grant.status}
+                                  </span>
+                                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-emerald-100 to-green-100 dark:from-emerald-500/20 dark:to-green-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/30">
+                                    <span className="text-sm font-bold">
+                                      {grant.amount}
+                                    </span>
                                   </div>
                                 </div>
 
@@ -267,7 +256,7 @@ export default function AwardsSection() {
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm uppercase text-gray-600 dark:text-gray-400 mb-1">Total Research Funding</p>
+                      <p className="text-sm uppercase text-gray-600 dark:text-gray-400 mb-1">Total Funding</p>
                       <p className="text-4xl font-bold text-neon-pink-500">RM 150,000</p>
                       <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">{researchGrants.length} active grants</p>
                     </div>
@@ -391,9 +380,9 @@ export default function AwardsSection() {
             )}
           </div>
 
-          {/* Research Grants List */}
+          {/* Funding List */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Research Grants</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Funding</h3>
             <div className="divide-y divide-gray-200 dark:divide-gray-800 rounded-lg bg-white/30 dark:bg-gray-900/30 overflow-hidden">
               {sortedGrants.map((grant, index) => {
                 const isExpanded = expandedId === `grant-${grant.id}`
@@ -433,26 +422,15 @@ export default function AwardsSection() {
                           className="overflow-hidden"
                         >
                           <div className="p-4 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900/80 dark:to-gray-900/50">
-                            {/* Header Section */}
-                            <div className="flex items-start gap-3 mb-4 pb-4 border-b border-gray-200 dark:border-gray-800">
-                              <div className="p-3 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 text-white shadow-lg flex-shrink-0">
-                                <DollarSign className="w-6 h-6" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center gap-2 mb-2">
-                                  <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-green-100 dark:bg-green-500/20 text-green-700 dark:text-green-400">
-                                    {grant.status}
-                                  </span>
-                                  <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
-                                    {grant.year}
-                                  </span>
-                                </div>
-                                <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-neon-pink-50 to-purple-50 dark:from-neon-pink-500/10 dark:to-purple-500/10 border-2 border-neon-pink-200 dark:border-neon-pink-500/20">
-                                  <span className="text-2xl font-bold text-neon-pink-600 dark:text-neon-pink-400">
-                                    {grant.amount}
-                                  </span>
-                                  <span className="text-xs text-neon-pink-600 dark:text-neon-pink-400 font-semibold">Funding</span>
-                                </div>
+                            {/* Badges */}
+                            <div className="flex flex-wrap items-center gap-2 mb-4 pb-4 border-b border-gray-200 dark:border-gray-800">
+                              <span className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-500/20 dark:to-emerald-500/20 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-500/30">
+                                {grant.status}
+                              </span>
+                              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-emerald-100 to-green-100 dark:from-emerald-500/20 dark:to-green-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/30">
+                                <span className="text-xs font-bold">
+                                  {grant.amount}
+                                </span>
                               </div>
                             </div>
 
@@ -485,9 +463,9 @@ export default function AwardsSection() {
             <div className="mt-8 p-4 rounded-xl border-2 border-neon-pink-500/20 bg-gray-50 dark:bg-gray-900">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs uppercase text-gray-600 dark:text-gray-400 mb-1">Total Research Funding</p>
+                  <p className="text-xs uppercase text-gray-600 dark:text-gray-400 mb-1">Total Funding</p>
                   <p className="text-3xl font-bold text-neon-pink-500">RM 150,000</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">{researchGrants.length} active grants</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">{researchGrants.length} active funding</p>
                 </div>
                 <TrendingUp className="w-10 h-10 text-neon-pink-500/30" />
               </div>
